@@ -43,7 +43,7 @@ const ticketID = pedidoCliente.idPedido.replace("ORD", "TICKET");
 
 const codigoPais = pedidoCliente.idPedido.slice(-3); // " agarra los 3 caracteres desde la derecha ARG"
 
-// .padStart() y .repeat() -> Formato estético para recibos
+
 const numeroFactura = "42".padStart(6, "0"); // "000042"
 const separador = "-".repeat(45);
 
@@ -59,11 +59,9 @@ const totalBruto = baseImponible + impuestoIVA;
 let stockRestante = stockDisponible;
 stockRestante -= pedidoCliente.cantidad; 
 
-
 const hayStockSuficiente = stockDisponible >= pedidoCliente.cantidad; 
 const esCompraGrande = pedidoCliente.cantidad > 3;                   
 const esTallaGrande = tallaLimpia === "L";                            
-
 
 const calificaEnvioGratis = (totalBruto > 150) || esSocioClub;    // OR (||)       
 const aplicaDescuentoVIP = esSocioClub && (pedidoCliente.cantidad >= 2); //AND 
@@ -73,10 +71,6 @@ const tieneDorsal = !pedidoCliente.dorsalPersonalizado ? "Sin Dorsal" : pedidoCl
 const porcentajeDescuento = aplicaDescuentoVIP ? 0.15 : 0.05;  // ? sirve como else e if 
 const montoDescuento = totalBruto * porcentajeDescuento;
 const totalPagar = totalBruto - montoDescuento;
-
-
-// 4. SALIDA Y PANEL DE CONTROL
-
 
 function generarRecibo() {
     console.log("=".repeat(45));
@@ -99,5 +93,4 @@ function generarRecibo() {
     console.log(`Stock Restante:       ${stockRestante} unidades`);
     console.log("=".repeat(45));
 }
-
 generarRecibo();
