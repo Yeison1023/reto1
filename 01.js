@@ -94,3 +94,5 @@ function generarRecibo() {
     console.log("=".repeat(45));
 }
 generarRecibo();
+
+
