@@ -98,35 +98,33 @@
 
 
 
-// 1. Variables y tipos de datos
-const nombreTienda = "Futbol World Shop"; // texto
-const precioCamiseta = 89.99;             // número
-const esSocio = true;                      // booleano
-let cupon = null;                          // sin valor por ahora
+// Variables y tipos de datos
+const nombreTienda = "Futbol World Shop"; 
+const precioCamiseta = 89.99;             
+const esSocio = true;                      
+let cupon = null;                          
 
-// 2. Arreglo: una lista de camisetas
+//  lista 
 const camisetas = ["Real Madrid", "Argentina Retro", "Barcelona"];
 
-// 3. Objeto: datos del pedido
+//  Objeto datos del pedido
 const pedido = {
   cliente: "Yonneiker Jose",
   talla: " l ",
   cantidad: 2
 };
 
-// 4. Limpiamos y cambiamos el texto
 const talla = pedido.talla.trim().toUpperCase();
-const cliente = pedido.cliente.trim();
+const cliente = pedido.cliente.trim(); //espacios en blanco 
 
-// 5. Hacemos los cálculos
 const subtotal = precioCamiseta * pedido.cantidad;
 const iva = subtotal * 0.19;
 const total = subtotal + iva;
 
-// 6. Revisamos una condición
+
 const hayDescuento = esSocio && pedido.cantidad >= 2;
 
-// 7. Función para mostrar el recibo
+
 function mostrarRecibo() {
   console.log("Tienda:", nombreTienda);
   console.log("Cliente:", cliente);
